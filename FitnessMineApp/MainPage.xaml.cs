@@ -1,6 +1,7 @@
 ﻿using System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Input;
 
 namespace FitnessMineApp
 {
@@ -29,6 +30,16 @@ namespace FitnessMineApp
             var result = Helper.CalculateBMI(ft, inc, we, wt);
 
             greetingOutput.Text = "You have a BMI of " +  result;
+        }
+
+        private void TextBox_KeyDown_Number(object sender, KeyRoutedEventArgs e)
+        {
+            if ((uint)e.Key >= (uint)Windows.System.VirtualKey.Number0
+                && (uint)e.Key <= (uint)Windows.System.VirtualKey.Number9)
+            {
+                e.Handled = false;
+            }
+            else e.Handled = true;
         }
     }
 }

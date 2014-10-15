@@ -5,6 +5,8 @@
     xmlns:local="using:FitnessMineApp"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -48,15 +50,27 @@
             <TextBlock Text="Calculate your Body Mass Index (BMI)" FontSize="36"/>
             <StackPanel Orientation="Horizontal" Margin="0,30,0,20">
                 <TextBlock Text="Height" FontSize="24"/>
-                <TextBox x:Name="tbHeightFeet" Width="10" HorizontalAlignment="Left" Margin="25,0,0,0" InputScope="Number" />
+                <TextBox x:Name="tbHeightFeet" Width="10" HorizontalAlignment="Left" Margin="25,0,0,0">
+                    <i:Interaction.Behaviors>
+                        <local:FilteredTextBoxBehavior Expression="^[0-9]*$" />
+                    </i:Interaction.Behaviors>
+                </TextBox>
                 <TextBlock Text="ft" FontSize="24" Margin="10,0,0,0" />
-                <TextBox x:Name="tbHeightInch" Width="10" HorizontalAlignment="Left" Margin="20,0,0,0" InputScope="Number" />
+                <TextBox x:Name="tbHeightInch" Width="10" HorizontalAlignment="Left" Margin="20,0,0,0">
+                    <i:Interaction.Behaviors>
+                        <local:FilteredTextBoxBehavior Expression="^[0-9]*$" />
+                    </i:Interaction.Behaviors>
+                </TextBox>
                 <TextBlock Text="inch" FontSize="24" Margin="10,0,0,0" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,20,0,50">
                 <TextBlock Text="Weight" FontSize="24"/>
-                <TextBox x:Name="tbWeight" Width="10" HorizontalAlignment="Left" Margin="20,0,0,0" InputScope="Number" />
+                <TextBox x:Name="tbWeight" Width="10" HorizontalAlignment="Left" Margin="20,0,0,0">
+                    <i:Interaction.Behaviors>
+                        <local:FilteredTextBoxBehavior Expression="^[0-9]*$" />
+                    </i:Interaction.Behaviors>
+                </TextBox>
                 <ComboBox x:Name="cbWeightType" Width="70" Margin="20,0,0,0" VerticalAlignment="Top" SelectedIndex="0">
                     <x:String>lbs</x:String>
                     <x:String>kg</x:String>
