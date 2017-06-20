@@ -14,7 +14,56 @@
     <link rel="stylesheet" href="//editor.silex.me/static/2.7/normalize.css" data-silex-static="">
     <link rel="stylesheet" href="//editor.silex.me/static/2.7/front-end.css" data-silex-static="">
 
-    <style type="text/css" class="silex-style"></style>
+    <style type="text/css" class="silex-style">
+        .caption {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            padding: 0 10px;
+            box-sizing: border-box;
+            pointer-events: none;
+        }
+        
+        .caption span {
+            display: inline-block;
+            padding: 10px;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            font-family: 'Myriad Pro regular';
+            font-size: 15.31px;
+        }
+        
+        .image_grid input {
+            display: none;
+        }
+        
+        .image_grid input:checked+.caption {
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .image_grid input:checked+.caption::after {
+            content: '✔';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            transform: translate(-50%, -50%);
+            color: #0079C0;
+            font-size: 60px;
+            line-height: 50px;
+            text-align: center;
+            border: 3px solid #FFB86C;
+            border-radius: 50%;
+        }
+        
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
     <script type="text/javascript" class="silex-script"></script>
     <style class="silex-inline-styles" type="text/css">
         .body-initial {
@@ -61,6 +110,22 @@
             width: 1200px;
         }
         
+        .silex-id-1497976953293-2 {
+            width: 100px;
+            background-color: rgb(255, 255, 255);
+            min-height: 100px;
+            top: 160px;
+            left: 767px;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1497976953293-2 {
+                left: 350px;
+                top: 1560px;
+            }
+        }
+        
         .silex-id-1478366450713-3 {
             top: 100px;
             left: NaNpx;
@@ -82,7 +147,7 @@
     </style>
     <title>Jagannath Temple</title>
     <script type="text/javascript" class="silex-json-styles">
-        [{"desktop":{"body-initial":{"background-color":"rgba(255,255,255,1)"},"silex-id-1474394621033-3":{"top":"5px","left":"0px"},"silex-id-1474394621032-2":{"min-height":"600px","background-color":"transparent","width":"1200px"},"silex-id-1474394605264-1":{"min-height":"100px","width":"100px","top":"100px","left":"100px"},"silex-id-1474394605263-0":{"min-height":"100px","background-color":"transparent"},"silex-id-1442914737143-3":{"min-height":"53px","width":"349px","top":"29px","left":"430px"},"silex-id-1478366444112-0":{"min-height":"100px","background-color":"transparent","width":"1200px"},"silex-id-1478366444112-1":{"top":"100px","left":"NaNpx","background-color":"transparent"},"silex-id-1478366450713-2":{"min-height":"100px","background-color":"transparent","width":"1200px"},"silex-id-1478366450713-3":{"top":"100px","left":"NaNpx","background-color":"transparent"},"silex-id-1497976664347-0":{"width":"100px","min-height":"100px","top":"100px","left":"767px"},"silex-id-1497976740581-1":{"width":"100px","background-color":"rgb(255, 255, 255)","min-height":"100px","top":"160px","left":"767px"}},"mobile":{"silex-id-1497976664347-0":{"left":"71px","top":"0px","width":"297px","min-height":"100px"}},"componentData":{}}]
+        [{"desktop":{"body-initial":{"background-color":"rgba(255,255,255,1)"},"silex-id-1474394621033-3":{"top":"5px","left":"0px"},"silex-id-1474394621032-2":{"min-height":"600px","background-color":"transparent","width":"1200px"},"silex-id-1474394605264-1":{"min-height":"100px","width":"100px","top":"100px","left":"100px"},"silex-id-1474394605263-0":{"min-height":"100px","background-color":"transparent"},"silex-id-1442914737143-3":{"min-height":"53px","width":"349px","top":"29px","left":"430px"},"silex-id-1478366444112-0":{"min-height":"100px","background-color":"transparent","width":"1200px"},"silex-id-1478366444112-1":{"top":"100px","left":"NaNpx","background-color":"transparent"},"silex-id-1478366450713-2":{"min-height":"100px","background-color":"transparent","width":"1200px"},"silex-id-1478366450713-3":{"top":"100px","left":"NaNpx","background-color":"transparent"},"silex-id-1497976664347-0":{"width":"100px","min-height":"100px","top":"100px","left":"767px"},"silex-id-1497976953293-2":{"width":"100px","background-color":"rgb(255, 255, 255)","min-height":"100px","top":"160px","left":"767px"}},"mobile":{"silex-id-1497976664347-0":{"left":"71px","top":"0px","width":"297px","min-height":"100px"},"silex-id-1497976953293-2":{"left":"350px","top":"1560px"}},"componentData":{}}]
     </script>
 
 
@@ -113,15 +178,89 @@
         }
     </style>
     <!-- Silex HEAD tag do not remove -->
+    <div class="container-fluid">
+        <h1>Rath Yatra - 2017</h1>
+        <div class="row">
+            <div class="col-xs-4" style="background-color:lavender;">
+                <div class="imageandtext image_grid">
+                    <label>
+      <img src="https://cdn0.iconfinder.com/data/icons/yooicons_set01_socialbookmarks/512/social_facebook_box_blue.png" class="img-thumbnail">
+      <input type="radio" name="selimg">
+      <span class="caption">
+        <!--<span>Painting</span>-->
+      </span>
+    </label>
+                </div>
+            </div>
+            <div class="col-xs-4" style="background-color:lavenderblush;">
+                <div class="imageandtext image_grid">
+                    <label>
+      <img src="https://c1.staticflickr.com/4/3501/3470094947_7639a56957.jpg" class="img-thumbnail">
+      <input type="radio" name="selimg">
+      <span class="caption">
+        <!--<span>Painting</span>-->
+      </span>
+    </label>
+                </div>
+            </div>
+            <div class="col-xs-4" style="background-color:lavender;">
+                <div class="imageandtext image_grid">
+                    <label>
+      <img src="http://www.etfarag.tv/img/logo512.png" class="img-thumbnail">
+      <input type="radio" name="selimg">
+      <span class="caption">
+        <!--<span>Painting</span>-->
+      </span>
+    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-4" style="background-color:lavender;">
+                <div class="imageandtext image_grid">
+                    <label>
+      <img src="http://www.richard-stanton.com/wp-content/uploads/2014/05/LargeIcon-300x300.png" class="img-thumbnail">
+      <input type="radio" name="selimg">
+      <span class="caption">
+        <!--<span>Painting</span>-->
+      </span>
+    </label>
+                </div>
+            </div>
+            <div class="col-xs-4" style="background-color:lavenderblush;">
+                <div class="imageandtext image_grid">
+                    <label>
+      <img src="https://previews.123rf.com/images/alexwhite/alexwhite1303/alexwhite130301737/18445737-friends-blue-and-white-square-web-glossy-icon-Stock-Photo.jpg" class="img-thumbnail">
+      <input type="radio" name="selimg">
+      <span class="caption">
+        <!--<span>Painting</span>-->
+      </span>
+    </label>
+                </div>
+            </div>
+            <div class="col-xs-4" style="background-color:lavender;">
+                <div class="imageandtext image_grid">
+                    <label>
+      <img src="https://s-media-cache-ak0.pinimg.com/736x/54/1d/58/541d587138598d8ae49cbd6c2ed0ae5f.jpg" class="img-thumbnail">
+      <input type="radio" name="selimg">
+      <span class="caption">
+        <!--<span>Painting</span>-->
+      </span>
+    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <!-- End of Silex HEAD tag do not remove -->
 </head>
 
 <body data-silex-id="body-initial" class="body-initial enable-mobile silex-runtime" data-silex-type="container">
     <div class="silex-pages">
-        <div data-silex-type="image" class="editable-style silex-id-hamburger-menu image-element menu-button prevent-draggable prevent-resizable" data-silex-id="silex-id-hamburger-menu">
-            <img alt="open mobile menu" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAoCAYAAAC8cqlMAAAB5UlEQVR42u2ZPWvCUBSGM+UfFO3e3dLu/QN+oKj4EUXRQREEJYgoiCAu6qCogyDo7iJ21UUaKqEgCC4iiEMGB3UVgsnpTWj/wfVK2nvhGbKEPJyT996TMMzPGg6H5mKx+GgkyuWyeTQasb8OTDwef4tEIp8+n+/LYIjJZJJHQiwzm81M6OLDarWqNpsNjEYgEJCy2ewT0+/3TagighElNFAnQT6ft1ARKkJFqMgfFvF4PFpuEwFtdrcRqVarIIoirFYrIiyXSxiPx+B2u/GJBINBuF6vQHopigK1Wg2fCMdxcLlciIuoqgqNRgOfiN1uB3Qwg91uB8fjkQiHwwEmkwne1qLxS0VuKKJle71eh06nQ4Rmswk8z+MVcTqdsNlsQJZlotF7Pp8hk8ngE4lGo/qN7xG/vV4Pb0Xm8zlxkdPpBGgMx/+yJxIJKBQKRMjlcuBwOGhq/Q+RcDgMsViMCFrAuFwu/CKDwQC22y1IkkSE/X4PgiDo+xc2Ea0S9zjGa/Hb7Xbxifj9fj0K7yFSqVTwtlY6nYbpdKpPiSRYLBbQarX0PYymFhWhIlSEilCRW6GdyUqlkoVZr9dsKpXiOY6TtW+7BkNBz/7ebrcf9L+6Xq+XRYPMMyrTq5EIhUIvaAjTJb4BBNQ2yhnth0wAAAAASUVORK5CYII="
-                class="silex-element-content">
-        </div>
+
 
         <a id="page-page-1" data-silex-type="page" class="page-element page-link-active">Page 1</a></div>
 
@@ -143,7 +282,13 @@
         </div>
     </div>
     <div data-silex-type="container" class="prevent-draggable container-element editable-style silex-id-1474394621033-3 section-element" data-silex-id="silex-id-1474394621033-3" style="">
-        <div data-silex-type="container" class="editable-style silex-element-content silex-id-1474394621032-2 silex-container-content container-element prevent-draggable website-width" data-silex-id="silex-id-1474394621032-2"></div>
+        <div data-silex-type="container" class="editable-style silex-element-content silex-id-1474394621032-2 silex-container-content container-element prevent-draggable website-width" data-silex-id="silex-id-1474394621032-2">
+            <div data-silex-type="html" class="editable-style silex-id-1497976953293-2 html-element" data-silex-id="silex-id-1497976953293-2">
+                <div class="silex-element-content">
+                    <p>New HTML box</p>
+                </div>
+            </div>
+        </div>
     </div>
     <div data-silex-type="container" class="prevent-draggable container-element editable-style silex-id-1478366450713-3 section-element" data-silex-id="silex-id-1478366450713-3" style="">
         <div data-silex-type="container" class="editable-style silex-element-content silex-id-1478366450713-2 silex-container-content container-element prevent-draggable website-width" data-silex-id="silex-id-1478366450713-2">
